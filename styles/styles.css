@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root{
+  --white: hsl(0, 0%, 100%);
+  --cyan: hsl(179, 62%, 43%);
+  --cyan-light: hsl(179, 47%, 52%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+
+  --font: 'Karla', sans-serif;
+}
+
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+
+html,
+body{
+  font-size: 16px;
+  display: relative;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 90%;
+  margin: 0;
+  box-shadow: 1px 2px 44px -16px rgba(0,0,0,0.75);
+  margin: 4rem 0rem;
+}
+
+.box{
+  font-family: var(--font);
+  padding: 2rem;
+}
+
+.trial{
+  background-color: var(--white);
+  border-radius: 5px 5px 0px 0px;
+}
+
+.trial h1{
+  color: var(--cyan);
+  font-size: 1.313rem;
+  margin-bottom: 1rem;
+}
+
+.trial h2{
+  color: var(--bright-yellow);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.trial p{
+  color: var(--grayish-blue);
+  font-size: 0.813rem;
+  line-height: 1.9;
+  font-weight: 600;
+}
+
+.subscription{
+  background-color: var(--cyan);
+}
+.subscription h1{
+  color: var(--white);
+  font-size: 1.313rem;
+  margin-bottom: 1.3rem;
+}
+
+.subscription h2{
+  margin-bottom: .5rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+}
+
+.subscription h2 span{
+  color: var(--light-gray);
+  font-size: 1.063rem;
+  padding: 0rem .5rem;
+}
+
+.subscription p{
+  color: var(--light-gray);
+  margin-bottom: 2rem;
+}
+
+.subscription a{
+  display: block;
+  background-color: var(--bright-yellow);
+  color: var(--white);
+  padding: .7em;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 1px 2px 44px -16px rgba(0,0,0,0.75);
+}
+
+.why-us{
+  background-color: var(--cyan-light);
+  border-radius:  0px 0px 5px 5px;
+}
+
+.why-us h1{
+  color: var(--white);
+  font-size: 1.313rem;
+  margin-bottom: 1.5rem;
+} 
+
+.why-us ul li{
+  color: var(--light-gray);
+  padding: .1rem 0rem;
+}
+
+@media(min-width:768px){
+
+  .container{
+    max-width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+    'trial trial'
+    'subscription why';
+  }
+
+  .trial{
+    grid-area: trial;
+    padding-right: 8rem;
+  }
+
+  .subscription{
+    grid-area: subscription;
+    border-radius:  0px 0px 0px 5px;
+
+  }
+
+  .why-us{
+    grid-area: why;
+    border-radius:  0px 0px 5px 0px;
+  }
+}
